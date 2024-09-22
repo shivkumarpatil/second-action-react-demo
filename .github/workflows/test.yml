@@ -15,6 +15,7 @@ jobs:
       - name: Run Test
         run: npm test
       - name: Add node_modules/.bin to PATH
-        run: echo "::add-path::$(npm bin)"
+        run: echo "$(npm bin)" >> $GITHUB_PATH
+
       - name: Run Vitest
         run: vitest run
